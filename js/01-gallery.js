@@ -21,7 +21,7 @@ galleryTotal.insertAdjacentHTML('beforeend', createEl);
 const modalWindow = (event) => {
     event.preventDefault();
 
-     if(event.currentTarget === event.target.classList.contains("gallery__image")) {
+     if(event.currentTarget === event.target) {
         return;
     }
     const currentItem = event.target.closest(".gallery__image");
@@ -38,15 +38,9 @@ const handleClickEscape = (event) => {
     };  
     
 document.addEventListener('keydown', handleClickEscape);
-
-
-const removePreviosKeyDownHandler = () => {document.removeEventListener('keydown' , handleClickEscape);}
-modal.on('close', removePreviosKeyDownHandler);
 };
 
-
 galleryTotal.addEventListener('click', modalWindow);
-
 
 
 
